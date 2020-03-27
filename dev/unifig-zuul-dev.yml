@@ -42,7 +42,10 @@ logging.config: classpath:log/logback-dev.xml
 
 # 上传文件零时目录
 server.tomcat.basedir: ./springboot-tomcat-tmp
-
+#是否将自己注册到Eureka-Server中，默认的为true
+eureka.client.registerWithEureka=false
+#是否从Eureka-Server中获取服务注册信息，默认为true
+eureka.client.fetchRegistry=false
 eureka.client.service-url.defaultZone: http://admin:123456@127.0.0.1:10001/eureka/
 eureka.instance.instance-id: ${spring.cloud.client.ipAddress}:${server.port}
 eureka.instance.prefer-ip-address: true
